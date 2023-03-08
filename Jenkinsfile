@@ -24,7 +24,7 @@ pipeline {
         stage('Build image') {
             steps {
                 script {
-                    dockerImage = docker.build("newnullboy/my-native-app")
+                    dockerImage = docker.build("localhost:5000/my-native-app")
                 }
             }
         }
@@ -32,8 +32,7 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(
-                        credentialsId: 'docker-credential',
-                        url: 'https://index.docker.io/v1/') {
+                        url: 'https://localhost:5000') {
                         dockerImage.push()
                     }
                 }

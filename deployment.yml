@@ -29,6 +29,6 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: newnullboy/my-native-app
+          image: localhost:5000/my-native-app
           ports:
             - containerPort: 80
