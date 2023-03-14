@@ -32,7 +32,7 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(
-                        url: 'https://localhost:5000') {
+                        url: 'localhost:5000') {
                         dockerImage.push()
                     }
                 }
